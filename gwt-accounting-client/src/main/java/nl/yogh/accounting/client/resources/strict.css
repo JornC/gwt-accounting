@@ -1,0 +1,60 @@
+@def BACKGROUND_COLOR #F2F2F2;
+@def CONTENT_COLOR #F7F7F7;
+@def FONT_COLOR #555;
+@def FONT_SUB_COLOR #888;
+@def ACCENT_COLOR #999;
+@def LINK_COLOR #FA8F08;
+
+body {
+  margin: 0px;
+  background-color: BACKGROUND_COLOR;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 81.25%;
+}
+
+* {
+  outline: 0;
+}
+
+.mainContent {
+  width: 66.66%; 
+}
+
+.link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: LINK_COLOR;
+  text-decoration: underline;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex>* {
+  min-width: 0;
+  min-height: 0;
+}
+
+.columns {
+  flex-direction: column;
+}
+
+.justify {
+  justify-content: center;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.panel {
+  flex-direction: column;
+}

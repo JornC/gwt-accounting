@@ -5,35 +5,15 @@
     <version>0.1</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>gwt-accounting-server</artifactId>
-  <name>GWT Accounting Server</name>
-  <packaging>war</packaging>
+  <artifactId>gwt-accounting-shared</artifactId>
+  <name>GWT Accounting shared files</name>
+  <packaging>jar</packaging>
 
   <dependencies>
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
       <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.gwt</groupId>
-      <artifactId>gwt-servlet</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.gwt</groupId>
-      <artifactId>gwt-dev</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>nl.yogh</groupId>
-      <artifactId>gwt-accounting-shared</artifactId>
-      <version>0.1</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.gwt.inject</groupId>
-      <artifactId>gin</artifactId>
-      <version>2.1.2</version>
     </dependency>
     <dependency>
       <groupId>junit </groupId>
@@ -52,30 +32,32 @@
         <directory>src/main/resources</directory>
       </resource>
       <resource>
-        <directory>/gwt-accounting-client/war/WEB-INF/classes</directory>
-      </resource>
-      <resource>
-        <directory>${project.build.directory}/generated-sources/gwt</directory>      
+        <directory>${project.build.directory}/generated-sources/gwt</directory>
       </resource>
     </resources>
     <plugins>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
+        <artifactId>buildnumber-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
-        <configuration>
-        </configuration>
+        <executions>
+          <execution>
+            <configuration>
+              <servicePattern>**/shared/**/*Service.java</servicePattern>
+            </configuration>
+            <goals>
+              <goal>generateAsync</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <source>1.6</source>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-war-plugin</artifactId>
-        <configuration>
-          <failOnMissingWebXml>false</failOnMissingWebXml>
-          <packagingIncludes>WEB-INF/deploy/**/*,application/**/*</packagingIncludes>
         </configuration>
       </plugin>
     </plugins>

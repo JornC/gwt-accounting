@@ -88,6 +88,7 @@
       <modules>
         <module>gwt-accounting-client</module>
         <module>gwt-accounting-server</module>
+        <module>gwt-accounting-shared</module>
       </modules>
     </profile>
   </profiles>
