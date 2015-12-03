@@ -5,7 +5,7 @@ import com.google.gwt.inject.client.GinModules;
 import com.google.gwt.inject.client.Ginjector;
 
 import nl.yogh.accounting.client.Application;
-import nl.yogh.accounting.client.ApplicationRootView;
+import nl.yogh.accounting.client.ui.ApplicationRootView;
 
 @GinModules(value = ApplicationClientModule.class)
 public interface ApplicationGinjector extends Ginjector {
