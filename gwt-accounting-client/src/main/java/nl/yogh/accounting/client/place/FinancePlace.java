@@ -4,7 +4,7 @@ import com.google.gwt.place.shared.Prefix;
 
 public class FinancePlace extends ApplicationPlace {
   private static final String PREFIX = "finance";
-  public static final String COLOR = "FFB900";
+  public static final String COLOR = "EF6C00";
 
   @Override
   public String getColor() {
