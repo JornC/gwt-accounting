@@ -54,7 +54,7 @@ public class ApplicationMenu extends Composite {
   public void init() {
     final ArrayList<ApplicationMenuItem> items = new ArrayList<ApplicationMenuItem>();
 
-    items.add(new ApplicationMenuItem("Overview", "4285f4") {
+    items.add(new ApplicationMenuItem("Overview", OverviewPlace.COLOR) {
       @Override
       public Place getPlace() {
         return new OverviewPlace();
@@ -65,7 +65,7 @@ public class ApplicationMenu extends Composite {
         return placeController.getWhere() instanceof OverviewPlace;
       }
     });
-    items.add(new ApplicationMenuItem("Income", "0f9d58") {
+    items.add(new ApplicationMenuItem("Income", IncomePlace.COLOR) {
       @Override
       public Place getPlace() {
         return new IncomePlace();
@@ -76,7 +76,7 @@ public class ApplicationMenu extends Composite {
         return placeController.getWhere() instanceof IncomePlace;
       }
     });
-    items.add(new ApplicationMenuItem("Expenses", "ef6c00") {
+    items.add(new ApplicationMenuItem("Expenses", ExpensePlace.COLOR) {
       @Override
       public Place getPlace() {
         return new ExpensePlace();
@@ -87,7 +87,7 @@ public class ApplicationMenu extends Composite {
         return placeController.getWhere() instanceof ExpensePlace;
       }
     });
-    items.add(new ApplicationMenuItem("Finances", "FAD165") {
+    items.add(new ApplicationMenuItem("Finances", FinancePlace.COLOR) {
       @Override
       public Place getPlace() {
         return new FinancePlace();

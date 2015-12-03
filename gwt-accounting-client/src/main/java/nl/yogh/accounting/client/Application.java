@@ -11,6 +11,7 @@ import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 
 import nl.yogh.accounting.client.di.ApplicationGinjector;
+import nl.yogh.accounting.client.place.ApplicationPlace;
 import nl.yogh.accounting.client.place.OverviewPlace;
 import nl.yogh.accounting.client.resources.R;
 
@@ -37,7 +38,9 @@ public class Application implements EntryPoint {
     eventBus.addHandler(PlaceChangeEvent.TYPE, new PlaceChangeEvent.Handler() {
       @Override
       public void onPlaceChange(final PlaceChangeEvent event) {
-        eventBus.fireEvent(new nl.yogh.accounting.client.event.PlaceChangeEvent(event.getNewPlace()));
+        if (event.getNewPlace() instanceof ApplicationPlace) {
+          eventBus.fireEvent(new nl.yogh.accounting.client.event.PlaceChangeEvent((ApplicationPlace) event.getNewPlace()));
+        }
       }
     });
 

@@ -3,7 +3,13 @@ package nl.yogh.accounting.client.place;
 import com.google.gwt.place.shared.Prefix;
 
 public class ExpensePlace extends ApplicationPlace {
+  public static final String COLOR = "ef6c00";
   private static final String PREFIX = "expenses";
+  
+  @Override
+  public String getColor() {
+    return COLOR;
+  }
 
   @Prefix(PREFIX)
   public static class Tokenizer extends CompositeTokenizer<ExpensePlace> {

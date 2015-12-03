@@ -3,7 +3,6 @@
   <ui:with field="res" type="nl.yogh.accounting.client.resources.R.ApplicationResource" />
   <ui:style>
   .navBar {
-    background-color: #4285f4;
     height: 56px;
     box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
     position: fixed;
@@ -11,6 +10,7 @@
     z-index: 2;
     -webkit-user-select: none;
     user-select: none;
+    transition: background 0.15s ease-out;
   }
   
   .sidePanel {
@@ -106,7 +106,7 @@
   </ui:style>
   <g:FlowPanel>
     <a:ApplicationMenu ui:field="menu" styleName="{style.sidePanel}" />
-    <g:FlowPanel styleName="{style.navBar} {res.css.grow} {res.css.flex} {res.css.alignCenter} {res.css.justify}">
+    <g:FlowPanel ui:field="navBar" styleName="{style.navBar} {res.css.grow} {res.css.flex} {res.css.alignCenter} {res.css.justify}">
       <g:HTMLPanel styleName="{res.css.flex} {style.navBarTitle} {res.css.alignCenter}">
         <img height="24" width="24" class="{style.sideNavImage}"
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACtJREFUeNpiYBgFo4BSwIjM+Q8EVDEUCOhmwSgYjeRRMBrJo2AUgABAgAEAdVMYB4OhELoAAAAASUVORK5CYII=" />
