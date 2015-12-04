@@ -1,4 +1,4 @@
-package nl.yogh.accounting.client.ui;
+package nl.yogh.accounting.client.domain;
 
 import com.google.gwt.place.shared.Place;
 

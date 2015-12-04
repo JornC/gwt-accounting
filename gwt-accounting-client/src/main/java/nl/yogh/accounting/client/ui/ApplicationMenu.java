@@ -15,6 +15,7 @@ import com.google.web.bindery.event.shared.EventBus;
 import com.google.web.bindery.event.shared.binder.EventBinder;
 import com.google.web.bindery.event.shared.binder.EventHandler;
 
+import nl.yogh.accounting.client.domain.ApplicationMenuItem;
 import nl.yogh.accounting.client.event.PlaceChangeEvent;
 import nl.yogh.accounting.client.place.ApplicationNavigationHandler;
 import nl.yogh.accounting.client.place.ExpensePlace;

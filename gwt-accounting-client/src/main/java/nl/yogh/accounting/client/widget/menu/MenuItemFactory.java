@@ -1,6 +1,5 @@
 package nl.yogh.accounting.client.widget.menu;
 
-import com.google.gwt.core.shared.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 
@@ -26,11 +25,9 @@ public class MenuItemFactory<M extends MenuItem> extends WidgetFactory<M, MenuIt
   public void applyCellOptions(final MenuItemWidget<M> cell, final M object) {
     super.applyCellOptions(cell, object);
 
-    GWT.log("HOOOI. " + object.getName());
     cell.addClickHandler(new ClickHandler() {
       @Override
       public void onClick(final ClickEvent event) {
-        GWT.log("Hoi?");
         menuHandler.onMenuSelect(object);
       }
     });

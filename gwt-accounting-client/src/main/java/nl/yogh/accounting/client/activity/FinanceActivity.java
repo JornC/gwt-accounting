@@ -1,4 +1,4 @@
-package nl.yogh.accounting.client.ui;
+package nl.yogh.accounting.client.activity;
 
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;

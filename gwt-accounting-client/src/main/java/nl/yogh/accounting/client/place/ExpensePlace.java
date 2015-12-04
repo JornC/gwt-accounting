@@ -3,9 +3,9 @@ package nl.yogh.accounting.client.place;
 import com.google.gwt.place.shared.Prefix;
 
 public class ExpensePlace extends ApplicationPlace {
-  public static final String COLOR = "D31717";
+  public static final String COLOR = "EF6C00";
   private static final String PREFIX = "expenses";
-  
+
   @Override
   public String getColor() {
     return COLOR;

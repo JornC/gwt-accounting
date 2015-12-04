@@ -9,14 +9,14 @@ import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.inject.Inject;
 
+import nl.yogh.accounting.client.activity.ExpenseActivity;
+import nl.yogh.accounting.client.activity.FinanceActivity;
+import nl.yogh.accounting.client.activity.IncomeActivity;
+import nl.yogh.accounting.client.activity.OverviewActivity;
 import nl.yogh.accounting.client.place.ExpensePlace;
 import nl.yogh.accounting.client.place.FinancePlace;
 import nl.yogh.accounting.client.place.IncomePlace;
 import nl.yogh.accounting.client.place.OverviewPlace;
-import nl.yogh.accounting.client.ui.ExpenseActivity;
-import nl.yogh.accounting.client.ui.FinanceActivity;
-import nl.yogh.accounting.client.ui.IncomeActivity;
-import nl.yogh.accounting.client.ui.OverviewActivity;
 
 public class ApplicationActivityMapper implements ActivityMapper {
   private final ActivityFactory factory;
