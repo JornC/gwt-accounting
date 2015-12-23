@@ -1,22 +1,12 @@
-package nl.yogh.accounting.main;
+package nl.yogh.accounting.main.place;
 
 import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.activity.shared.ActivityMapper;
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.core.client.Scheduler.ScheduledCommand;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.inject.Inject;
-
-import nl.yogh.accounting.main.ui.expense.ExpenseActivity;
-import nl.yogh.accounting.main.ui.expense.ExpensePlace;
-import nl.yogh.accounting.main.ui.finance.FinanceActivity;
-import nl.yogh.accounting.main.ui.finance.FinancePlace;
-import nl.yogh.accounting.main.ui.income.IncomeActivity;
-import nl.yogh.accounting.main.ui.income.IncomePlace;
-import nl.yogh.accounting.main.ui.overview.OverviewActivity;
-import nl.yogh.accounting.main.ui.overview.OverviewPlace;
 
 public class ApplicationActivityMapper implements ActivityMapper {
   private final ActivityFactory factory;
@@ -31,8 +21,6 @@ public class ApplicationActivityMapper implements ActivityMapper {
   @Override
   public Activity getActivity(final Place place) {
     Activity activity = null;
-
-    GWT.log(place.getClass().getName());
 
     if (place instanceof OverviewPlace) {
       activity = factory.createOverviewPresenter((OverviewPlace) place);
@@ -54,19 +42,6 @@ public class ApplicationActivityMapper implements ActivityMapper {
     }
 
     return activity;
-  }
-
-  /**
-   * Methods capable of creating presenters given the place that is passed in.
-   */
-  public interface ActivityFactory {
-    OverviewActivity createOverviewPresenter(OverviewPlace place);
-
-    IncomeActivity createIncomeActivity(IncomePlace place);
-
-    ExpenseActivity createExpenseActivity(ExpensePlace place);
-
-    FinanceActivity createFinanceActivity(FinancePlace place);
   }
 
 }

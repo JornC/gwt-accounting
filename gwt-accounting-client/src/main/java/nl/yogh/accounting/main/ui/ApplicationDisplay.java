@@ -1,4 +1,4 @@
-package nl.yogh.accounting.main;
+package nl.yogh.accounting.main.ui;
 
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.gwt.user.client.ui.IsWidget;

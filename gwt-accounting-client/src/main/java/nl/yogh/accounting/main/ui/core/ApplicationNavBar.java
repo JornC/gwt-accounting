@@ -1,4 +1,4 @@
-package nl.yogh.accounting.main.ui.root;
+package nl.yogh.accounting.main.ui.core;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.BlurEvent;
@@ -17,7 +17,8 @@ import com.google.web.bindery.event.shared.EventBus;
 import com.google.web.bindery.event.shared.binder.EventBinder;
 import com.google.web.bindery.event.shared.binder.EventHandler;
 
-import nl.yogh.accounting.main.event.PlaceChangeEvent;
+import nl.yogh.accounting.main.i18n.M;
+import nl.yogh.accounting.main.place.PlaceChangeEvent;
 import nl.yogh.accounting.main.util.ColorUtil;
 import nl.yogh.accounting.main.util.StyleUtil;
 
@@ -38,6 +39,7 @@ public class ApplicationNavBar extends Composite {
   @UiField Label navBarTitle;
   @UiField TextBox search;
   @UiField CustomStyle style;
+  private ApplicationViewType currentViewType;
 
   @Inject
   public ApplicationNavBar(final EventBus eventBus) {
@@ -49,7 +51,14 @@ public class ApplicationNavBar extends Composite {
 
   @EventHandler
   public void onPlaceChange(final PlaceChangeEvent e) {
-    navBar.getElement().getStyle().setBackgroundColor(ColorUtil.webColor(e.getValue().getColor()));
+    currentViewType = e.getValue().getType();
+
+    updateNavBar();
+  }
+
+  private void updateNavBar() {
+    navBarTitle.setText(M.messages().applicationViewTitle(currentViewType));
+    navBar.getElement().getStyle().setBackgroundColor(ColorUtil.webColor(currentViewType.getColor()));
   }
 
   @UiHandler("search")
@@ -61,6 +70,6 @@ public class ApplicationNavBar extends Composite {
   @UiHandler("search")
   public void onSearchFieldBlur(final BlurEvent e) {
     navBar.setStyleName(style.searchMode(), false);
-    navBarTitle.setText("Inbox");
+    navBarTitle.setText(M.messages().applicationViewTitle(currentViewType));
   }
 }

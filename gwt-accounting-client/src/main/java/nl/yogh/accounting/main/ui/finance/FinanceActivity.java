@@ -5,7 +5,9 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.gwt.user.client.ui.Label;
 
-public class FinanceActivity extends AbstractActivity {
+import nl.yogh.accounting.main.ui.finance.FinanceView.Presenter;
+
+public class FinanceActivity extends AbstractActivity implements Presenter {
   @Override
   public void start(final AcceptsOneWidget panel, final EventBus eventBus) {
     panel.setWidget(new Label("Finance"));

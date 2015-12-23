@@ -1,17 +1,14 @@
-package nl.yogh.accounting.main.ui.finance;
+package nl.yogh.accounting.main.place;
 
 import com.google.gwt.place.shared.Prefix;
 
-import nl.yogh.accounting.main.place.ApplicationPlace;
-import nl.yogh.accounting.main.place.CompositeTokenizer;
+import nl.yogh.accounting.main.ui.core.ApplicationViewType;
 
 public class FinancePlace extends ApplicationPlace {
   private static final String PREFIX = "finance";
-  public static final String COLOR = "CEBE00";
 
-  @Override
-  public String getColor() {
-    return COLOR;
+  public FinancePlace() {
+    super(ApplicationViewType.FINANCE);
   }
 
   @Prefix(PREFIX)

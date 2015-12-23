@@ -45,6 +45,9 @@
         <directory>src/main/java</directory>
       </resource>
       <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+      <resource>
         <directory>/gwt-accounting-client/war/WEB-INF/classes</directory>
       </resource>
     </resources>

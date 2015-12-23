@@ -10,10 +10,11 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 
-import nl.yogh.accounting.main.di.ApplicationGinjector;
+import nl.yogh.accounting.main.place.ApplicationActivityMapper;
 import nl.yogh.accounting.main.place.ApplicationPlace;
+import nl.yogh.accounting.main.place.OverviewPlace;
 import nl.yogh.accounting.main.resources.R;
-import nl.yogh.accounting.main.ui.overview.OverviewPlace;
+import nl.yogh.accounting.main.ui.ApplicationDisplay;
 
 public class Application implements EntryPoint {
 
@@ -27,6 +28,8 @@ public class Application implements EntryPoint {
 
   @Inject PlaceController placeController;
 
+  @Inject ApplicationDisplay rootDisplay;
+
   @Override
   public void onModuleLoad() {
     ApplicationGinjector.INSTANCE.inject(this);
@@ -39,20 +42,18 @@ public class Application implements EntryPoint {
       @Override
       public void onPlaceChange(final PlaceChangeEvent event) {
         if (event.getNewPlace() instanceof ApplicationPlace) {
-          eventBus.fireEvent(new nl.yogh.accounting.main.event.PlaceChangeEvent((ApplicationPlace) event.getNewPlace()));
+          eventBus.fireEvent(new nl.yogh.accounting.main.place.PlaceChangeEvent((ApplicationPlace) event.getNewPlace()));
         }
       }
     });
 
-    final ApplicationDisplay applicationDisplay = ApplicationGinjector.INSTANCE.getApplicationRootView();
-
     final ActivityManager activityManager = new ActivityManager(activityMapper, eventBus);
-    activityManager.setDisplay(applicationDisplay);
+    activityManager.setDisplay(rootDisplay);
 
     final PlaceHistoryHandler historyHandler = new PlaceHistoryHandler(historyMapper);
     historyHandler.register(placeController, eventBus, new OverviewPlace());
     historyHandler.handleCurrentHistory();
 
-    RootPanel.get().add(applicationDisplay);
+    RootPanel.get().add(rootDisplay);
   }
 }

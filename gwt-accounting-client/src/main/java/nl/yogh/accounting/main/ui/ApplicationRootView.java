@@ -1,4 +1,4 @@
-package nl.yogh.accounting.main.ui.root;
+package nl.yogh.accounting.main.ui;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -10,7 +10,8 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 
-import nl.yogh.accounting.main.ApplicationDisplay;
+import nl.yogh.accounting.main.ui.core.ApplicationMenu;
+import nl.yogh.accounting.main.ui.core.ApplicationNavBar;
 
 public class ApplicationRootView extends Composite implements ApplicationDisplay {
   interface ApplicationRootViewUiBinder extends UiBinder<Widget, ApplicationRootView> {}

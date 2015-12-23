@@ -1,9 +1,4 @@
 @def BACKGROUND_COLOR #F2F2F2;
-@def CONTENT_COLOR #F7F7F7;
-@def FONT_COLOR #555;
-@def FONT_SUB_COLOR #888;
-@def ACCENT_COLOR #999;
-@def LINK_COLOR #FA8F08;
 
 body {
   margin: 0px;

@@ -1,4 +1,4 @@
-package nl.yogh.accounting.main.di;
+package nl.yogh.accounting.main;
 
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.inject.client.AbstractGinModule;
@@ -10,17 +10,20 @@ import com.google.inject.Singleton;
 import com.google.web.bindery.event.shared.EventBus;
 import com.google.web.bindery.event.shared.SimpleEventBus;
 
-import nl.yogh.accounting.main.ApplicationActivityMapper;
-import nl.yogh.accounting.main.ApplicationActivityMapper.ActivityFactory;
+import nl.yogh.accounting.main.place.ActivityFactory;
+import nl.yogh.accounting.main.place.ApplicationActivityMapper;
 import nl.yogh.accounting.main.place.ApplicationPlaceHistoryMapper;
+import nl.yogh.accounting.main.ui.ApplicationDisplay;
+import nl.yogh.accounting.main.ui.ApplicationRootView;
 
 public class ApplicationClientModule extends AbstractGinModule {
   @Override
   protected void configure() {
-    bind(ActivityMapper.class).to(ApplicationActivityMapper.class).in(Singleton.class);;
-    bind(PlaceHistoryMapper.class).to(ApplicationPlaceHistoryMapper.class).in(Singleton.class);
+    bind(ApplicationDisplay.class).to(ApplicationRootView.class).in(Singleton.class);
+    bind(ActivityMapper.class).to(ApplicationActivityMapper.class).in(Singleton.class);
     bind(EventBus.class).to(SimpleEventBus.class).in(Singleton.class);
     bind(PlaceController.class).to(ApplicationPlaceController.class).in(Singleton.class);
+    bind(PlaceHistoryMapper.class).to(ApplicationPlaceHistoryMapper.class).in(Singleton.class);
 
     install(new GinFactoryModuleBuilder().build(ActivityFactory.class));
   }

@@ -1,17 +1,14 @@
-package nl.yogh.accounting.main.ui.expense;
+package nl.yogh.accounting.main.place;
 
 import com.google.gwt.place.shared.Prefix;
 
-import nl.yogh.accounting.main.place.ApplicationPlace;
-import nl.yogh.accounting.main.place.CompositeTokenizer;
+import nl.yogh.accounting.main.ui.core.ApplicationViewType;
 
 public class ExpensePlace extends ApplicationPlace {
-  public static final String COLOR = "EF6C00";
   private static final String PREFIX = "expenses";
 
-  @Override
-  public String getColor() {
-    return COLOR;
+  public ExpensePlace() {
+    super(ApplicationViewType.EXPENSE);
   }
 
   @Prefix(PREFIX)

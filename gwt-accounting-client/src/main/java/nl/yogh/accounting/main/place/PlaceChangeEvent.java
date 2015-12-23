@@ -1,6 +1,6 @@
-package nl.yogh.accounting.main.event;
+package nl.yogh.accounting.main.place;
 
-import nl.yogh.accounting.main.place.ApplicationPlace;
+import nl.yogh.accounting.main.event.SimpleGenericEvent;
 
 /**
  * Wrapper for the {@link com.google.gwt.place.shared.PlaceChangeEvent} to make
