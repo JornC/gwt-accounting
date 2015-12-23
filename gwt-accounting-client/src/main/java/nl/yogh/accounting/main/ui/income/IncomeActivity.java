@@ -8,7 +8,6 @@ import com.google.inject.Inject;
 import nl.yogh.accounting.main.ui.expense.ExpenseView.Presenter;
 
 public class IncomeActivity extends AbstractActivity implements Presenter {
-
   private final IncomeView view;
 
   @Inject

@@ -5,23 +5,25 @@ import java.util.Date;
 
 import nl.yogh.accounting.util.HasDate;
 
-public class Event implements Serializable, HasDate {
+public class EventEntry implements Serializable, HasDate {
   private static final long serialVersionUID = -5312389590363121609L;
 
-  public enum EventType {
+  public enum EntryType {
     EXPENSE, INCOME
   }
 
-  private EventType type;
+  private EntryType type;
   private Date date;
 
-  public Event() {}
+  public EventEntry(final EntryType type) {
+    this.type = type;
+  }
 
-  public EventType getType() {
+  public EntryType getType() {
     return type;
   }
 
-  public void setType(final EventType type) {
+  public void setType(final EntryType type) {
     this.type = type;
   }
 
